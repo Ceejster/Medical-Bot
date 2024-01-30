@@ -8,9 +8,7 @@ namespace Medical_Bot
 {
     internal class SurveyQuestions
     {
-        Patient patient = new Patient();
-
-        public void GetName()
+        public void GetName(Patient patient)
         {
             while (patient.Name == null || patient.Name == "")
             {
@@ -27,9 +25,10 @@ namespace Medical_Bot
                     continue;
                 }
             }
+            Console.Clear();
         }
 
-        public void GetAge()
+        public void GetAge(Patient patient)
         {
             while (patient.Age == 0)
             {
@@ -45,13 +44,13 @@ namespace Medical_Bot
                     Console.WriteLine("Invalid age");
                     continue;
                 }
-
             }
+            Console.Clear();
         }
 
-        public void GetGender()
+        public void GetGender(Patient patient)
         {
-            Console.WriteLine("Whats your gender? (m/f/other)");
+            Console.Write("Whats your gender (m/f/other)? ");
             string? genderInput = Console.ReadLine();
             string gender = genderInput.ToLower();
 
@@ -71,11 +70,12 @@ namespace Medical_Bot
             {
                 patient.Gender = "N/A";
             }
+            Console.Clear();
         }
 
-        public void Diabetus()
+        public void Diabetus(Patient patient)
         {
-            Console.WriteLine("Are you diabetic? (y/n)");
+            Console.Write("Are you diabetic (y/n)? ");
             string? isDiabetic = Console.ReadLine();
             string lowerDiabetic = isDiabetic.ToLower();
 
@@ -90,7 +90,104 @@ namespace Medical_Bot
             else
             {
                 Console.WriteLine("Invalid response");
-                Diabetus();
+                Diabetus(patient);
+            }
+            Console.Clear();
+        }
+
+        public void SymptomCode(Patient patient)
+        {
+            Console.WriteLine("What symptom are you feeling?");
+            Console.WriteLine("S1: Headache");
+            Console.WriteLine("S2: Skin rashes");
+            Console.WriteLine("S3: Dizziness");
+            Console.Write("Please enter the code (s1/s2/s3): ");
+
+            string? symptomBig = Console.ReadLine();
+            string symptom = symptomBig.ToLower();
+
+            if (symptom == "s1")
+            {
+                patient.SymptomCode = "S1: Headache";
+                patient.Prescription = "Ibuprofen";
+            }
+            else if (symptom == "s2")
+            {
+                patient.SymptomCode = "S2: Skin rashes";
+                patient.Prescription = "Diphenhydramine";
+            }
+            else if (symptom == "s3")
+            {
+                patient.SymptomCode = "S3: Dizziness";
+                
+                if (patient.Diabetic == false)
+                {
+                    patient.Prescription = "Dimenhydrinate";
+                }
+                else
+                {
+                    patient.Prescription = "Metformin";
+                }
+            }
+            else
+            {
+                Console.WriteLine("If your symptom isn't here we aren't able to help now, sorry.");
+                Console.WriteLine("Exit (y/n)");
+
+                string? exit = Console.ReadLine();
+                string lowExit = exit.ToLower();
+
+                if (lowExit == "y")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Thank you, goodbye.");
+                }
+                else
+                {
+                    SymptomCode(patient);
+                }
+            }
+            Console.Clear();
+        }
+
+        public void GetDosage(Patient patient)
+        {
+            if (patient.Prescription == "Ibuprofen")
+            {
+                if (patient.Age < 18)
+                {
+                    patient.Dosage = 400;
+                }
+                else
+                {
+                    patient.Dosage = 800;
+                }
+            }
+            else if (patient.Prescription == "Diphenhydramine")
+            {
+                if (patient.Age < 18)
+                {
+                    patient.Dosage = 50;
+                }
+                else
+                {
+                    patient.Dosage = 300;
+                }
+            }
+            else if (patient.Prescription == "Dimenhydrinate")
+            {
+                if (patient.Age < 18)
+                {
+                    patient.Dosage = 50;
+                }
+                else
+                {
+                    patient.Dosage = 400;
+                }
+            }
+            else
+            {
+                patient.Dosage = 500;
             }
         }
     }
