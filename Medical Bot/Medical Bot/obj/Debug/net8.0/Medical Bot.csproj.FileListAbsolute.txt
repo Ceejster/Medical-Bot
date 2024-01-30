@@ -26,3 +26,4 @@ C:\Users\CjBow\OneDrive\Documents\Coding\Projects\source\repos\C# Projects\Ultim
 C:\Users\CjBow\OneDrive\Documents\Coding\Projects\source\repos\C# Projects\Ultimate Guide\Medical Bot\Medical Bot\Medical Bot\obj\Debug\net8.0\Medical Bot.pdb
 C:\Users\CjBow\OneDrive\Documents\Coding\Projects\source\repos\C# Projects\Ultimate Guide\Medical Bot\Medical Bot\Medical Bot\obj\Debug\net8.0\Medical Bot.genruntimeconfig.cache
 C:\Users\CjBow\OneDrive\Documents\Coding\Projects\source\repos\C# Projects\Ultimate Guide\Medical Bot\Medical Bot\Medical Bot\obj\Debug\net8.0\ref\Medical Bot.dll
+C:\Users\CjBow\OneDrive\Documents\Coding\Projects\source\repos\C# Projects\Ultimate Guide\Medical Bot\Medical Bot\Medical Bot\obj\Debug\net8.0\Medical Bot.sourcelink.json
