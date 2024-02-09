@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Medical Bot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+feb5d5697aa5bbce2101db1fd058cbc68bcc54c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59d1cd753c62694caa12453562d20e5f804507ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Medical Bot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Medical Bot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

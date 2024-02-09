@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Medical_Bot
+﻿namespace Medical_Bot
 {
     internal class SurveyQuestions
     {
@@ -37,7 +31,15 @@ namespace Medical_Bot
                 bool success = int.TryParse(ageInput, out var age);
                 if (success)
                 {
-                    patient.Age = age;
+                    if (age > 0 && age < 110)
+                    {
+                        patient.Age = age;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid age");
+                        continue;
+                    }
                 }
                 else
                 {
